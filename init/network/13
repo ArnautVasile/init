@@ -1,0 +1,13 @@
+The server at 10.51.1.253 is a DNS server.
+Using the command nc -vnz 10.51.1.253 [start_port - end_port] we can scan open TCP ports.
+The connection with the server succeeds on port 53, which is the TCP port for the DNS service.
+found 0 associations
+found 1 connections:
+     1:	flags=82<CONNECTED,PREFERRED>
+	outif en0
+	src 10.21.0.157 port 60118
+	dst 10.51.1.253 port 53
+	rank info not available
+	TCP aux info available
+
+Connection to 10.51.1.253 port 53 [tcp/*] succeeded!

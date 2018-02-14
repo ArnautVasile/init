@@ -1,0 +1,10 @@
+if [ $# -eq 0 ]
+then
+	crontab -l > cron
+	echo "0 4 * * 1 sh /root/init/scripting/02 1" >> cron 
+	crontab cron
+	rm cron
+else
+	apt-get -y update >> /var/log/update_script.log
+	apt-get -y upgrade >> /var/log/update_script.log
+fi

@@ -1,0 +1,14 @@
+echo "#!/bin/bash" >> shh.sh
+echo "i=1" >> shh.sh
+echo "echo \"\\\n\"" >> shh.sh
+echo "while [ \$i -le 20 ]" >> shh.sh
+echo "do" >> shh.sh
+echo "cat /etc/passwd | tr ':' '\\\n' | awk 'NR%7==1' | sed -n \"\${i}p\"" >> shh.sh
+echo "cat /etc/passwd | tr ':' '\\\n' | awk 'NR%7==3' | sed -n \"\${i}p\"" >> shh.sh
+echo "cat /etc/passwd | tr ':' '\\\n' | awk 'NR%7==6' | sed -n \"\${i}p\"" >> shh.sh
+echo "i=\$(( i+1 ))" >> shh.sh
+echo "echo \",\"" >> shh.sh
+echo "done" >> shh.sh 
+
+sh shh.sh | tr '\n' ':' | tr ',' '\n' | sed 's/.$//' | sed 's/.//' | sed '1s/.//'
+rm shh.sh

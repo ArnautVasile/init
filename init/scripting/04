@@ -1,0 +1,20 @@
+if [ $# -eq 0 ]
+then
+	crontab -l > .cron
+	echo "00 00 * * * sh /root/init/scripting/04 1" >> .cron 
+	crontab -l > cron2
+	echo "00 00 * * * sh /root/init/scripting/04 1" >> cron2
+	crontab cron2
+	rm cron2
+else
+	crontab -l > /root/init/scripting/cron2
+	diff /root/init/scripting/.cron /root/init/scripting/cron2 > /root/init/scripting/test
+	rm /root/init/scripting/cron2
+	if [ -s /root/init/scripting/test ]
+	then
+    		mail -s "crontab a fost modificat" root <<EOF
+		crontab modificat		
+EOF
+fi
+rm /root/init/scripting/test
+fi

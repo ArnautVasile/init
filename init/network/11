@@ -1,0 +1,2 @@
+1  10.21.0.1 (10.21.0.1)
+These are the name and local IP of the router that makes the link between local network and outside world. The router's public IP is not shown in traceroute output. The router's public IP address is 87.248.160.6.

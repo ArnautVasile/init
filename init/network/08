@@ -1,0 +1,4 @@
+AS      | IP               | BGP Prefix          | CC | Registry | Allocated  | AS Name
+16509   | 13.32.118.0      | 13.32.118.0/23      | US | arin     | 2016-08-09 | AMAZON-02 - Amazon.com, Inc., US
+AS      | IP               | BGP Prefix          | CC | Registry | Allocated  | AS Name
+16509   | 13.32.210.0      | 13.32.208.0/21      | US | arin     | 2016-08-09 | AMAZON-02 - Amazon.com, Inc., US
